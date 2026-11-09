@@ -1,0 +1,64 @@
+[
+  {
+    "_id": "6aab6b80d7077bb7d49fe59f",
+    "name": "Shokoladli tort",
+    "description": "Mazali va nafis shokoladli tort. Faqat tabiiy ingredientlardan tayyorlanadi.",
+    "slug": "shokoladli-tort",
+    "category": "tort",
+    "price": 150000,
+    "stock": 8,
+    "weight": 1,
+    "weightUnit": "kg",
+    "allergens": [],
+    "customizable": true,
+    "customPricePerKg": 150000,
+    "isAvailable": true,
+    "ingredients": "",
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "_id": "6aac117536c4becb3bdefbbb",
+    "name": "pecheny15",
+    "description": "ajoyib tamli",
+    "category": "tort",
+    "price": 15000,
+    "stock": 9,
+    "weight": 0,
+    "weightUnit": "kg",
+    "isAvailable": true,
+    "ingredients": "",
+    "images": [
+      {
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0ZV2Rlc1ndZvu2T4biWNfbGE9jqwjfittK3iFzEOhCBXefrtSM7L3mQpF&s=10",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "_id": "6aed04dbc5349cf30e27a6bf",
+    "name": "san sebastian",
+    "description": "Juda totli shirinlik",
+    "category": "tort",
+    "price": 18000,
+    "stock": 1,
+    "weight": 0,
+    "weightUnit": "kg",
+    "allergens": [],
+    "ingredientsVerified": false,
+    "customizable": false,
+    "lowStockThreshold": 5,
+    "isAvailable": true,
+    "ingredients": "",
+    "images": [
+      {
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4YfAOACEqrbeFufHJ7-0SQs27803Jj7A_tjYUgHsd3m4wyimTzW78ifKf&s=10",
+        "isMain": true
+      }
+    ]
+  }
+]

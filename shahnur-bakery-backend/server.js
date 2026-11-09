@@ -61,6 +61,9 @@ async function start() {
   const app = require('./src/app');
   console.log('[startup] 3/4 Connecting to MongoDB and preparing indexes');
   await connectDB();
+  if (process.env.NODE_ENV === 'production') {
+    await require('./src/services/initialCatalog').importInitialCatalog();
+  }
   const server = http.createServer(app);
   const io = configureSockets(server);
   app.set('io', io);
