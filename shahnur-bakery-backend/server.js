@@ -2,7 +2,7 @@ require('dotenv').config();
 const http = require('http');
 const { Server } = require('socket.io');
 const jwt = require('jsonwebtoken');
-const app = require('./src/app');
+const { validateEnvironment, describeFailure } = require('./src/utils/startupDiagnostics');
 const connectDB = require('./src/config/database');
 const User = require('./src/models/User');
 const Chat = require('./src/models/Chat');
@@ -55,17 +55,30 @@ function configureSockets(server) {
   return io;
 }
 async function start() {
-  if (!process.env.JWT_SECRET || process.env.JWT_SECRET.length < 32) throw new Error('JWT_SECRET kamida 32 belgidan iborat bo?lishi kerak');
-  if (!process.env.MONGODB_URI) throw new Error('MONGODB_URI sozlanmagan');
+  console.log('[startup] 1/4 Checking environment settings');
+  validateEnvironment(process.env);
+  console.log('[startup] 2/4 Loading application');
+  const app = require('./src/app');
+  console.log('[startup] 3/4 Connecting to MongoDB and preparing indexes');
   await connectDB();
   const server = http.createServer(app);
   const io = configureSockets(server);
   app.set('io', io);
-  server.listen(process.env.PORT || 5000, () => console.log('Bakery server ready'));
+  console.log('[startup] 4/4 Opening HTTP server');
+  await new Promise((resolve, reject) => {
+    server.once('error', reject);
+    server.listen(process.env.PORT || 5000, () => { server.removeListener('error', reject); resolve(); });
+  });
+  console.log('Bakery server ready');
   const shutdown = () => { io.close(); server.close(() => process.exit(0)); };
   process.on('SIGTERM', shutdown);
   process.on('SIGINT', shutdown);
   return { server, io };
 }
-if (require.main === module) start().catch(error => { console.error('Server startup failed:', error.message); process.exitCode = 1; });
+if (require.main === module) start().catch(async error => {
+  // stdout keeps failure details alongside build/start logs in hosting dashboards.
+  console.log('[startup] FAILED: ' + describeFailure(error));
+  process.exitCode = 1;
+  try { await require('mongoose').disconnect(); } catch { /* Preserve the original failure. */ }
+});
 module.exports = { start, configureSockets };
