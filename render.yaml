@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: shahnur-bakery
+    runtime: node
+    buildCommand: npm ci --prefix shahnur-bakery-backend && npm ci --prefix shahnur-bakery-frontend --include=dev && npm run build
+    startCommand: cd shahnur-bakery-backend && npm start
+    healthCheckPath: /ready
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: "22"
+      - key: TRUST_PROXY_HOPS
+        value: "1"
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_URL
+        sync: false
+      - key: VITE_API_URL
+        value: /api
+      - key: VITE_SOCKET_URL
+        value: ""
+      - key: PAYMENTS_ENABLED
+        value: "false"

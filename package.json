@@ -1,0 +1,17 @@
+{
+  "name": "shahnur-bakery",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev:backend": "npm --prefix shahnur-bakery-backend run dev",
+    "dev:frontend": "npm --prefix shahnur-bakery-frontend run dev",
+    "build": "npm --prefix shahnur-bakery-frontend run build",
+    "test": "npm --prefix shahnur-bakery-backend test && npm --prefix shahnur-bakery-frontend test",
+    "create-admin": "npm --prefix shahnur-bakery-backend run create-admin",
+    "db:local": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/start-local-db.ps1",
+    "test:integration": "npm --prefix shahnur-bakery-backend run test:integration"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  }
+}
