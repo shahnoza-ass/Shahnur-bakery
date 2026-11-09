@@ -1433,7 +1433,7 @@ const Chats = () => { const { t } = useLanguage(); return <div className="max-w-
 
 // ==================== ABOUT ====================
 const About = () => { const { t } = useLanguage(); return (
-  <div className="max-w-4xl mx-auto px-4 py-12">
+  <div className="about-page max-w-4xl mx-auto px-4 py-12">
     <h1
       className="text-4xl md:text-5xl font-bold mb-8"
       style={{ fontFamily: 'Playfair Display, serif', color: '#293E58' }}

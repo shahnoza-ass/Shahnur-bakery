@@ -38,7 +38,7 @@ export function BakeryHeader() {
     <div className="bakery-topline"><div className="bakery-container"><span><HiOutlineLocationMarker /> {t("Buxoro, O‘zbekiston")}</span><span>{t("Har kuni 09:00 — 21:00")}</span><a href="tel:+998948224702">+998 94 822 47 02</a></div></div>
     <div className="bakery-container bakery-nav">
       <Link className="bakery-brand" to="/" aria-label={t("Shahnur Bakery — bosh sahifa")}><span className="brand-seal" aria-hidden="true">{t("s")}<span>✧</span></span><span>shahnur<small>little moments, sweet memories</small></span></Link>
-      <nav aria-label={t("Asosiy menyu")} className={menu ? 'bakery-links is-open' : 'bakery-links'}>
+      <nav id="bakery-menu" aria-label={t("Asosiy menyu")} className={menu ? 'bakery-links is-open' : 'bakery-links'}>
         <NavLink to="/" end>{t('Bosh sahifa')}</NavLink><NavLink to="/shop">{t('Katalog')}</NavLink><NavLink to="/cake-builder">{t('Tort konstruktori', 'Конструктор')}</NavLink><NavLink to="/contact">{t('Aloqa')}</NavLink>
         {isAuthenticated && <NavLink to="/my-orders">{t('Buyurtmalarim')}</NavLink>}
         {isAdmin && <NavLink to="/admin">{t('Admin')}</NavLink>}

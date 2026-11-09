@@ -278,7 +278,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children, title, subti
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
           {/* ==================== SIDEBAR ==================== */}
-          <aside className="lg:col-span-1">
+          <aside className="admin-sidebar min-w-0 lg:col-span-1">
             <div className="bg-white rounded-2xl shadow-lg p-4 sticky top-24">
               <div
                 className="mb-4 pb-4 border-b"
@@ -351,7 +351,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children, title, subti
           </aside>
 
           {/* ==================== CONTENT ==================== */}
-          <main className="lg:col-span-4">
+          <main className="admin-content lg:col-span-4">
             <div className="mb-6">
               <h1
                 className="text-3xl font-bold"

@@ -1,0 +1,129 @@
+/* Shared breakpoints keep the header, storefront and forms in step. */
+.bakery-nav { height: auto; }
+.bakery-brand, .bakery-actions { flex-shrink: 0; }
+.bakery-main, .commerce-two-column > *, .commerce-product-grid > *,
+.story-section > *, .footer-grid > *, .admin-content { min-width: 0; }
+.commerce-nav { padding-inline: 36px; justify-content: center; }
+.about-page > h1 { text-align: center; overflow-wrap: anywhere; }
+
+@media (min-width: 801px) and (max-width: 1050px) {
+  .bakery-nav { padding-block: 18px 10px; }
+  .bakery-links { flex-wrap: wrap; }
+}
+
+@media (max-width: 800px) {
+  .bakery-nav { position: relative; min-height: 84px; gap: 12px; }
+  .bakery-links {
+    top: calc(100% - 4px);
+    left: 16px;
+    right: 16px;
+    width: auto;
+    max-height: min(65dvh, 480px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .bakery-links a, .bakery-links button { min-height: 44px; padding: 12px 16px; }
+  .bakery-actions > a, .bakery-actions > button { width: 44px; min-height: 44px; }
+  .commerce-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    flex-wrap: nowrap;
+    gap: 8px;
+    padding: 8px 20px 14px;
+    overflow: visible;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+  }
+  .commerce-nav a { min-width: 0; min-height: 44px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 8px; border-radius: 12px; background: #f0f6fa; line-height: 1.5; overflow-wrap: anywhere; }
+  .bakery-hero { grid-template-columns: minmax(0, 1fr); }
+  .hero-copy { min-width: 0; min-height: auto; padding: 32px 28px 8px; }
+  .hero-copy h1 { font-size: clamp(2.25rem, 7.5vw, 3.8rem); overflow-wrap: anywhere; }
+  .hero-copy > .eyebrow { max-width: 100%; }
+  .hero-description { max-width: 38ch; font-size: .9rem; line-height: 1.8; }
+  .hero-bottom { margin-top: 12px; }
+  .hero-dots { flex-shrink: 0; }
+  .hero-photo { min-width: 0; min-height: 340px; padding: 24px 40px 54px; }
+  .hero-photo > img { max-width: 360px; height: 280px; }
+  .hero-stamp { top: auto; right: auto; left: 22px; bottom: 56px; }
+  .photo-caption { left: 22px; right: 22px; justify-content: center; text-align: center; }
+  .story-section { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .story-photo { transform: none; min-height: 0; }
+  .story-photo img { height: 280px; }
+  .story-copy { padding: 8px 4px; }
+  .custom-order { flex-direction: column; align-items: flex-start; }
+  .commerce-panel, .commerce-action-row > *, .builder-form label { min-width: 0; }
+  .commerce-page input:not([type=checkbox]):not([type=radio]),
+  .commerce-page select, .commerce-page textarea,
+  .bakery-main input:not([type=checkbox]):not([type=radio]),
+  .bakery-main select, .bakery-main textarea { font-size: 16px; }
+  .admin-sidebar nav { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; }
+  .admin-sidebar nav a { flex-shrink: 0; min-height: 44px; white-space: nowrap; }
+  .admin-sidebar > div { position: static; }
+  .admin-content { overflow-wrap: anywhere; }
+}
+
+@media (max-width: 560px) {
+  .bakery-container { padding-inline: 16px; }
+  .bakery-topline > div { font-size: 10px; gap: 8px; }
+  .bakery-topline span:nth-child(2) { display: none; }
+  .bakery-topline a { white-space: nowrap; }
+  .bakery-nav { flex-wrap: wrap; justify-content: center; gap: 16px; padding-block: 18px 10px; }
+  .bakery-nav .bakery-brand { font-size: 2rem; }
+  .bakery-nav .bakery-brand small { font-size: 9px; letter-spacing: .3px; }
+  .bakery-actions { width: 100%; justify-content: space-between; gap: 8px; max-width: 340px; }
+  .bakery-actions > a, .bakery-actions > button {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    font-size: 21px;
+  }
+  .bakery-actions .language-toggle { font-size: 12px !important; }
+  .commerce-nav { padding-inline: 16px; gap: 8px; font-size: 12px; }
+  .about-page { padding-block: 28px; }
+  .about-page > h1 { font-size: clamp(1.75rem, 8vw, 2.25rem); margin-bottom: 24px; }
+  .about-page > div { padding: 24px 20px; }
+  .about-page p { font-size: 15px; line-height: 1.85; }
+  .bakery-home { padding-top: 12px; }
+  .bakery-hero { margin-inline: 12px; border-radius: 24px; }
+  .hero-copy { padding: 26px 20px 0; }
+  .hero-copy > .eyebrow { font-size: 9px; letter-spacing: .6px; border-radius: 12px; }
+  .hero-copy h1 { margin-block: 20px 16px; letter-spacing: -1px; }
+  .hero-description { margin-bottom: 18px; }
+  .hero-cta { width: 100%; gap: 6px; flex-direction: column; align-items: stretch; }
+  .hero-cta .bakery-button { width: 100%; font-size: 13px; }
+  .hero-secondary { text-align: center; font-size: 12px; }
+  .hero-bottom { gap: 8px; padding-top: 6px; }
+  .hero-bottom > span { font-size: 11px; }
+  .hero-photo { min-height: 300px; padding: 20px 28px 50px; }
+  .hero-photo > img { height: 240px; max-width: 290px; border-width: 7px; }
+  .hero-stamp { left: 14px; bottom: 52px; padding: 10px 12px; font-size: 12px; }
+  .hero-orbit { inset: 12px 20px 40px; }
+  .photo-caption { bottom: 12px; font-size: 11px; letter-spacing: 0; }
+  .bakery-promise { margin-top: 14px; padding: 16px; gap: 14px 12px; font-size: 11px; line-height: 1.6; }
+  .bakery-section { padding-top: 32px; padding-bottom: 16px; }
+  .section-heading { flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 20px; }
+  .section-heading h2, .story-copy h2, .custom-order h2 { font-size: clamp(1.6rem, 6.5vw, 2rem); }
+  .bakery-categories { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .bakery-categories > a { padding: 9px 9px 16px; border-radius: 18px; }
+  .bakery-categories h3 { font-size: 18px; }
+  .bakery-categories a > span { font-size: 11px; }
+  .featured-section { padding-bottom: 28px; }
+  .bakery-empty { padding: 26px 18px; }
+  .custom-order { padding: 24px; border-radius: 22px; gap: 22px; }
+  .custom-order .bakery-button { width: 100%; }
+  .service-links { padding-block: 22px; }
+  .service-links > a { padding: 18px 16px; }
+  .service-links p { font-size: 12px; }
+  .footer-grid { grid-template-columns: minmax(0, 1fr); padding-block: 32px; gap: 24px; }
+  .footer-grid h2 { margin-bottom: 12px; }
+  .footer-grid p, .footer-grid > div > a:not(.bakery-brand) { font-size: 13px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; padding-bottom: 24px; }
+  .commerce-page { padding: 28px 16px 44px; }
+  .commerce-panel { padding: 20px 16px; border-radius: 18px; }
+  .commerce-two-column { gap: 16px; margin-top: 20px; }
+  .commerce-product-grid { grid-template-columns: minmax(0, 1fr); }
+  .accessibility-tools { right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); }
+}

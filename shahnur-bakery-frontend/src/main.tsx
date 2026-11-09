@@ -5,6 +5,7 @@ import { InstallApp } from './components/common/InstallApp';
 import './styles/index.css';
 import './styles/shahnur.css';
 import './styles/commerce.css';
+import './styles/responsive.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
