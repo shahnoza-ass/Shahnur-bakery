@@ -142,12 +142,15 @@ const createProduct = async (req, res) => {
       category,
       price: Number(price),
       stock: Number(stock) || 0,
+      discountPrice: req.body.discountPrice === undefined ? undefined : Number(req.body.discountPrice),
+      weight: Number(req.body.weight) || 0,
+      weightUnit: req.body.weightUnit || 'kg',
       images: formattedImages,
       averageRating: 0,
       totalReviews: 0,
       views: 0,
       soldCount: 0,
-      isAvailable: true,
+      isAvailable: req.body.isAvailable !== false,
       ...Object.fromEntries(Object.entries(req.body).filter(([key]) => ['nameRu', 'descriptionRu', 'ingredients', 'allergens', 'ingredientsVerified', 'customizable', 'customPricePerKg', 'lowStockThreshold'].includes(key))),
     });
 

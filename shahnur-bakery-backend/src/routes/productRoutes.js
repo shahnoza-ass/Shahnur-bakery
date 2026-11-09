@@ -12,7 +12,8 @@ const {
   updateStock,
 } = require('../controllers/productController');
 const { protect, admin } = require('../middleware/auth');
-const { uploadMultiple } = require('../middleware/upload');
+const { uploadMultiple } = require('../middleware/productUpload');
+const validateProduct = require('../middleware/validateProduct');
 
 // MUHIM: /upload-images /:id dan OLDIN bo'lishi kerak
 router.post(
@@ -25,8 +26,8 @@ router.post(
 
 router.get('/', getProducts);
 router.get('/:id', getProduct);
-router.post('/', protect, admin, createProduct);
-router.put('/:id', protect, admin, updateProduct);
+router.post('/', protect, admin, validateProduct, createProduct);
+router.put('/:id', protect, admin, validateProduct, updateProduct);
 router.delete('/:id', protect, admin, deleteProduct);
 router.patch('/:id/stock', protect, admin, updateStock);
 router.post(

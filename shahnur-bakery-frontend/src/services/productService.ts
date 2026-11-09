@@ -21,6 +21,8 @@ export interface Product {
   customizable?: boolean;
   customPricePerKg?: number;
   lowStockThreshold?: number;
+  weight?: number;
+  weightUnit?: 'kg' | 'g' | 'lb' | 'oz';
 }
 
 export interface ProductFilters {

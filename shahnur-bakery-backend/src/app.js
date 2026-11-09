@@ -69,6 +69,7 @@ app.use('/api', (req, res, next) => {
 app.use('/api/auth', require('./routes/passwordRoutes'));
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
+app.get('/api/media/:id', require('./services/productMedia').serveImage);
 app.use('/api/orders', orderRoutes);
 app.use('/api/reviews', reviewRoutes);
 app.use('/api/admin', adminRoutes);

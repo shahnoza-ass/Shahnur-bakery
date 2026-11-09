@@ -67,7 +67,7 @@ Skript mavjud foydalanuvchini o‘chirmaydi yoki parolini almashtirmaydi. Tayyor
 
 ## Asosiy jarayonlar
 
-1. Administrator mahsulot yaratadi: nomi, tavsifi, kategoriyasi, narxi, ombor miqdori va rasm URL manzili.
+1. Administrator telefondagi galereya yoki kameradan rasmlar tanlab mahsulot yaratadi: nomi, tavsifi, kategoriyasi, narxi, chegirmasi, vazni va ombor qoldig‘ini kiritadi. 5 tagacha rasm qo‘shish va asosiy rasmni tanlash mumkin.
 2. Mijoz ro‘yxatdan o‘tadi, tizimga kiradi va savatchaga haqiqiy mahsulotlarni qo‘shadi.
 3. Buyurtma narxini server hisoblaydi. Miqdor musbat butun son bo‘lishi kerak. Yetarli qoldiq bo‘lmasa yoki biror saqlash amali bajarilmasa, tranzaksiya bekor qilinadi.
 4. Administrator buyurtmani ketma-ket `pending → confirmed → preparing → ready → out_for_delivery → delivered` holatlari orqali boshqaradi. Tayyor buyurtmani bevosita yetkazilgan deb belgilash ham mumkin.
@@ -83,7 +83,7 @@ Chatning oxirgi 100 xabari ko‘rsatiladi; bitta suhbat 10 000 xabar bilan chega
 - **To‘lov:** naqd to‘lov ishlaydi. Payme va Click uchun to‘lov havolalari va tekshiriladigan callbacklar qo‘shilgan; haqiqiy savdogar rekvizitlari va `PAYMENTS_ENABLED=true` sozlanmaguncha ular ko‘rsatilmaydi. Ulanish tartibi va tekshiruv chegaralari [COMMERCE.md](COMMERCE.md)da. Uzum va Stripe ulanmagan.
 - **Email:** SMTP sozlanganda parolni tiklash havolasi yuboriladi. Havola 30 daqiqa amal qiladi va bir marta ishlatiladi. SMTP sertifikati tekshiriladi. Sozlanmagan SMTP bilan tiklash emaili yetib bormaydi.
 - **Telegram:** `TELEGRAM_BOT_TOKEN` va `TELEGRAM_ADMIN_CHAT_ID` sozlanganda yangi buyurtma xabari haqiqiy Bot API orqali yuboriladi.
-- **Rasmlar:** mahsulotga HTTPS rasm URL manzili berish mumkin. Fayl yuklash uchun Cloudinary rekvizitlari kerak.
+- **Rasmlar:** admin panelidan galereya yoki kameradan yuklanadi. Telefon rasmlari brauzerda 1600 pikselgacha kichraytiriladi. Har bir fayl limiti 5 MB, mahsulotga 5 tagacha rasm. JPG, PNG, WEBP va GIF fayllari tarkibi tekshiriladi. Cloudinary sozlanmasa rasmlar MongoDB GridFS’da saqlanadi va `/api/media/:id` orqali ochiladi; Render diskining vaqtinchaligiga bog‘liq emas. Uchala Cloudinary rekviziti kiritilsa, yangi yuklamalar Cloudinary’da saqlanadi. Mavjud GridFS rasmlari ishlashda davom etadi. HTTPS rasm havolasini qo‘shish ham mumkin.
 - **SMS va tashqi push:** provayder ulanmagan. Brauzer ichidagi bildirishnomalar Socket.IO orqali ishlaydi.
 
 ## Tekshiruv

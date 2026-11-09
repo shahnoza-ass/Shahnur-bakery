@@ -21,6 +21,8 @@
 
 SMTP, Cloudinary va haqiqiy to‘lov xizmatlari uchun rekvizitlarni hostingdagi maxfiy sozlamalarda alohida kiriting. Sozlanmaguncha elektron to‘lov o‘chiq qoladi. Kalitlarni chatga yubormang.
 
+Mahsulot rasmlari uchun Cloudinary majburiy emas: sozlanmaganida yuklangan rasmlar Atlas ichidagi GridFS’da doimiy saqlanadi. Admin panelda `/admin/products` orqali galereya/kameradan 5 tagacha rasm, kategoriya, narx, chegirma, qoldiq, vazn va tarkib kiritiladi. Rasmlar baza xotirasidan foydalanadi. Mahsulotni yashirish uni katalogdan olib turadi; tahrirlash orqali yana sotuvga qaytarish mumkin.
+
 ## Docker varianti
 
 Loyiha ildizidagi Dockerfile frontendni yig‘ib, ishlab chiqarish uchun Node serverga qo‘shadi. Baza konteynerga kiritilmagan: tashqi Atlas yoki replica set URI kerak.
