@@ -63,6 +63,7 @@ async function start() {
   await connectDB();
   if (process.env.NODE_ENV === 'production') {
     await require('./src/services/initialCatalog').importInitialCatalog();
+    await require('./src/services/bootstrapAdmin').bootstrapAdmin();
   }
   const server = http.createServer(app);
   const io = configureSockets(server);
